@@ -7,9 +7,25 @@
 </head>
 <body>
 <h1>My Super Fancy Spa</h1>
+
 <div id = "clientProfile">
+<h2>My Profile</h2>
+    <p th:text="${name}">Name</p>
+    <p th:text="${skintype}">Skin Type</p>
+    <p th:text="${manipedi}">Mani Pedi</p>
 </div>
+
 <div id = "servicesMenu">
+    <table>
+        <th:block>
+        <tr th:each="facial : ${appropriateFacials}" th:text="${facial}">Facial<tr/>
+        </th:block>
+    </table>
+    <div>
+        <h3></h3>
+    </div>
 </div>
+
+
 </body>
 </html>
