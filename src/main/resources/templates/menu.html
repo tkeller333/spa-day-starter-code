@@ -20,7 +20,9 @@
         <table>
             <h2>Facial Treatments</h2>
             <p>The facial treatments below are recommended by our estheticians for your given skin type.</p>
-            <tr th:each="facial : ${appropriateFacials}" th:text="${facial}">Facial<tr/>
+            <tr th:each="facial : ${appropriateFacials}" >
+                <td th:text="${facial}"></td>
+            <tr/>
         </table>
      <div th:if="${manipedi.equals('manicure')}">
          <h3>Manicure</h3>
@@ -28,6 +30,11 @@
      </div>
      <div th:if="${manipedi.equals('pedicure')}">
          <h3>Pedicure</h3>
+         <p th:replace="fragments :: pedicureDescription"></p>
+     </div>
+     <div th:if="${manipedi.equals('both')}">
+         <h3>Manicure & Pedicure</h3>
+         <p th:replace="fragments :: manicureDescription"></p>
          <p th:replace="fragments :: pedicureDescription"></p>
      </div>
     </th:block>
