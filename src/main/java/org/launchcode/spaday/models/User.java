@@ -1,7 +1,12 @@
 package org.launchcode.spaday.models;
 
+import javax.validation.constraints.NotBlank;
+
 public class User {
+    @NotBlank(message = "Please enter a username.")
     private String username;
+
+    @NotBlank(message = "Please enter a password")
     private String email;
     private String password;
 
